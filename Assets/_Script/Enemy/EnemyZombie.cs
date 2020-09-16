@@ -5,7 +5,11 @@ using UnityEngine;
 public class EnemyZombie : Enemy
 {
     protected float Speed = 5f;
+    protected int Score = 10;
+    
+    public KeyCode Kill; //Temporary
 
+    
 
     public EnemyZombie()
     {
@@ -25,12 +29,24 @@ public class EnemyZombie : Enemy
             
         }
 
-        //public override void ChasePlayer();
+        
+    }
 
+    void ChasePlayer()
+    {
+        //zombie version
     }
 
     void Start()
     {
         GetComponent<SphereCollider>().radius = range;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(Kill))  //Test
+        {
+            //EnemyKill(player);
+        }
     }
 }

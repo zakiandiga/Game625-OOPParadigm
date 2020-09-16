@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRepository : Enemy
 {
-    //How to add enemy to this repository?
+    //How to add zombies to this repository?
     //Where to attach this script to?
 
     public List<Enemy> enemyList;

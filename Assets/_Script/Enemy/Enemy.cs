@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public abstract class Enemy : MonoBehaviour
     public string name;
     public int health;
     public float range;
+    //consider get/set to change private var
+
+    public static event Action<Enemy> OnEnemyKill;  
+
+    void Start()
+    {
+        PlayerControl.OnAttack += EnemyKill;
+    }
 
     public virtual void ChasePlayer()
     {
@@ -18,6 +27,13 @@ public abstract class Enemy : MonoBehaviour
     public virtual void ChasePlayer(float chaseSpeed)
     {
         print("Chase player within range at " + chaseSpeed);
+    }
+
+    public void EnemyKill(PlayerControl player)
+    {
+        OnEnemyKill(this);
+        //Remove this from EnemyRepository
+        Destroy(gameObject);
     }
 
 

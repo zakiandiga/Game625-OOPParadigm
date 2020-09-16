@@ -9,10 +9,10 @@ public interface Observer
 
 public enum NotificationType
 {
-    ScoreZombie,
-    PowerupSpeed,
-    PowerupStrength,
-    EnemyKilled,
+    Score,
+    EnemyKill,
+    EnemySpawn,
+    Attack,
 
 
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyVampire : Enemy
 {
     protected float Speed = 10f;
+    protected int Score = 20;
     float chaseSpeed = 20f;
 
     public EnemyVampire()

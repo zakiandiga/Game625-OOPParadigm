@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
 
     void Start()
     {
-        PlayerControl.OnAttack += EnemyKill;
+        //PlayerControl.Attack += EnemyKill;
     }
 
     public virtual void ChasePlayer()
@@ -29,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
         print("Chase player within range at " + chaseSpeed);
     }
 
-    public void EnemyKill(PlayerControl player)
+    public void EnemyKill()//PlayerControl player)
     {
         OnEnemyKill(this);
         //Remove this from EnemyRepository

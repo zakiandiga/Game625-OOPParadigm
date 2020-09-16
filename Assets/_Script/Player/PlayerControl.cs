@@ -10,12 +10,11 @@ public class PlayerControl : MonoBehaviour
     public LayerMask layer;
 
     public Camera cam;
-    public static event Action<PlayerControl> OnAttack;
-    
+        
 
     void Start()
     {
-        //enemy = GameObject.Find("Enemy");
+        
     }
 
     void Update()
@@ -33,7 +32,13 @@ public class PlayerControl : MonoBehaviour
         if (Physics.Raycast (ray, out hit, range, layer))
         {
             Debug.Log("Hit Something");
-            //OnAttack();
+            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.EnemyKill();
+            }
+            
+            
         }
 
     }

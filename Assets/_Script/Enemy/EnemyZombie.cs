@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyZombie : Enemy
 {
     protected float Speed = 5f;
-    protected int Score = 10;
+    [SerializeField] protected int Score = 10;
     
     public KeyCode Kill; //Temporary
 
@@ -42,11 +42,5 @@ public class EnemyZombie : Enemy
         GetComponent<SphereCollider>().radius = range;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(Kill))  //Test
-        {
-            //EnemyKill(player);
-        }
-    }
+
 }
